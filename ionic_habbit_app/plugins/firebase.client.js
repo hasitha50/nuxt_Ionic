@@ -5,12 +5,13 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 export default defineNuxtPlugin((nuxtApp) => {
 
   const firebaseConfig = {
-    apiKey: "AIzaSyCzby2WcRfYSMD-gJ3zH7TAP_axCm12s5Q",
-    authDomain: "nuxt-ionic-test.firebaseapp.com",
-    projectId: "nuxt-ionic-test",
-    storageBucket: "nuxt-ionic-test.firebasestorage.app",
-    messagingSenderId: "599993243420",
-    appId: "1:599993243420:web:923dae4fab0ba98be5ccd9"
+      apiKey: process.env.NUXT_FIREBASE_API_KEY,
+      authDomain: process.env.NUXT_FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.NUXT_FIREBASE_PROJECT_ID,
+      storageBucket: process.env.NUXT_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.NUXT_FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.NUXT_FIREBASE_APP_ID,
+      measurementId: process.env.NUXT_FIREBASE_MEASUREMENT_ID
   };
 
   // Initialize Firebase
